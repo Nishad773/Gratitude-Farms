@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Ravi Kiran — Solar Drying for Rural Women | Gramonnati Trust</title>
+<style>
+  :root{
+    --terracotta:#b35a2e;
+    --terracotta-dark:#8c4622;
+    --gold:#d99b3f;
+    --leaf:#4a7c3f;
+    --leaf-dark:#33572b;
+    --cream:#fbf6ee;
+    --charcoal:#2b2521;
+    --grey:#6b6258;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--charcoal);
+    background:var(--white);
+    line-height:1.65;
+  }
+  h1,h2,h3,h4{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:700;
+    margin:0 0 0.5em 0;
+    color:var(--terracotta-dark);
+  }
+  p{margin:0 0 1em 0;}
+  a{color:var(--terracotta);}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:0.78rem;
+    color:var(--leaf-dark);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, rgba(20,15,10,0.45), rgba(20,15,10,0.65)),
+      url("images/hero_tray_loading_dichpally.jpg") center 30%/cover no-repeat;
+    color:#fff;
+    padding:110px 0 70px;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero .eyebrow{color:var(--gold);}
+  .hero h1{
+    color:#fff;
+    font-size:2.7rem;
+    line-height:1.15;
+    max-width:780px;
+    margin-bottom:18px;
+  }
+  .hero .sub{
+    font-size:1.15rem;
+    max-width:680px;
+    color:#f3ece0;
+  }
+  .hero .meta{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .hero .meta span{
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.35);
+    border-radius:30px;
+    padding:7px 16px;
+    font-size:0.85rem;
+    backdrop-filter:blur(2px);
+  }
+
+  /* STAT STRIP */
+  .stats{
+    background:var(--leaf-dark);
+    color:#fff;
+    padding:34px 0;
+  }
+  .stats .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+  }
+  .stats .num{font-size:1.9rem;font-weight:700;font-family:Georgia,serif;color:var(--gold);}
+  .stats .lbl{font-size:0.82rem;color:#e3ead9;margin-top:4px;}
+
+  section{padding:64px 0;}
+  section.alt{background:var(--cream);}
+  .section-head{max-width:760px;margin-bottom:34px;}
+  .section-head h2{font-size:2rem;}
+
+  /* TWO LOCATION CARDS */
+  .loc-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .loc-card{
+    border:1px solid #e7ddcb;
+    border-radius:14px;
+    padding:28px;
+    background:#fff;
+  }
+  .loc-card h3{
+    font-size:1.3rem;
+    color:var(--leaf-dark);
+    margin-bottom:6px;
+  }
+  .loc-card .place{
+    font-size:0.85rem;
+    color:var(--grey);
+    margin-bottom:16px;
+  }
+  .loc-card ul{
+    margin:0;
+    padding-left:18px;
+  }
+  .loc-card li{margin-bottom:8px;font-size:0.95rem;}
+
+  /* PROCESS FLOW */
+  .flow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    margin-top:20px;
+  }
+  .flow .step{
+    flex:1 1 150px;
+    background:#fff;
+    border:1px solid #e7ddcb;
+    border-top:4px solid var(--terracotta);
+    border-radius:8px;
+    padding:18px 16px;
+    margin:6px;
+    min-width:150px;
+  }
+  .flow .step .n{
+    font-family:Georgia,serif;
+    font-weight:700;
+    color:var(--terracotta);
+    font-size:0.85rem;
+    margin-bottom:6px;
+  }
+  .flow .step h4{font-size:0.98rem;margin-bottom:4px;color:var(--charcoal);}
+  .flow .step p{font-size:0.85rem;color:var(--grey);margin:0;}
+
+  /* TIMELINE */
+  .timeline{border-left:3px solid var(--gold);margin-left:8px;padding-left:24px;}
+  .tl-item{position:relative;margin-bottom:22px;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-32px;
+    top:4px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--terracotta);
+    border:2px solid #fff;
+  }
+  .tl-date{font-weight:700;color:var(--terracotta-dark);font-size:0.9rem;}
+  .tl-text{font-size:0.95rem;color:var(--charcoal);}
+
+  /* GALLERY */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:10px;
+  }
+  .gallery figure{margin:0;}
+  .gallery img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+  }
+  .gallery figcaption{
+    font-size:0.83rem;
+    color:var(--grey);
+    margin-top:8px;
+    line-height:1.4;
+  }
+  .gallery figcaption b{color:var(--charcoal);}
+
+  /* PRODUCTS */
+  .prod-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .prod-card{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    background:#fff;
+    border:1px solid #e7ddcb;
+    border-radius:12px;
+    padding:16px;
+  }
+  .prod-card img{
+    width:110px;
+    height:130px;
+    object-fit:contain;
+    flex-shrink:0;
+  }
+  .prod-card h4{margin-bottom:4px;font-size:1.05rem;color:var(--terracotta-dark);}
+  .prod-card p{font-size:0.88rem;color:var(--grey);margin:0;}
+
+  table.gt{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+    font-size:0.92rem;
+  }
+  table.gt th, table.gt td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid #e7ddcb;
+  }
+  table.gt th{
+    background:var(--leaf-dark);
+    color:#fff;
+    font-weight:600;
+  }
+  table.gt tr:nth-child(even){background:#f7f1e4;}
+
+  .partner-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:16px;
+  }
+  .chip{
+    background:#fff;
+    border:1px solid #e7ddcb;
+    border-radius:30px;
+    padding:8px 16px;
+    font-size:0.85rem;
+    color:var(--charcoal);
+  }
+
+  .team-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    margin-top:10px;
+  }
+  .team-grid h4{color:var(--leaf-dark);font-size:1.05rem;margin-bottom:10px;}
+  .team-grid ul{margin:0;padding-left:18px;}
+  .team-grid li{font-size:0.92rem;margin-bottom:6px;}
+
+  .cta{
+    background:linear-gradient(120deg, var(--terracotta-dark), var(--terracotta));
+    color:#fff;
+    text-align:center;
+    padding:60px 0;
+  }
+  .cta h2{color:#fff;}
+  .cta p{max-width:640px;margin:0 auto 24px;color:#fbe9da;}
+  .cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:13px 28px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:0.92rem;
+    text-decoration:none;
+  }
+  .btn.primary{background:var(--gold);color:var(--charcoal);}
+  .btn.outline{border:1px solid rgba(255,255,255,0.6);color:#fff;}
+
+  footer{
+    background:var(--charcoal);
+    color:#cfc6b8;
+    padding:28px 0;
+    font-size:0.82rem;
+    text-align:center;
+  }
+  footer a{color:var(--gold);}
+
+  .note{
+    font-size:0.82rem;
+    color:var(--grey);
+    border-left:3px solid var(--gold);
+    padding:10px 16px;
+    background:#fff;
+    margin-top:24px;
+  }
+
+  @media (max-width:760px){
+    .hero h1{font-size:1.9rem;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .loc-grid, .prod-grid, .team-grid{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:480px){
+    .gallery{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Our Journey · Past Project (2022–2023)</div>
+    <h1>Project Ravi Kiran — Turning Sunlight and Surplus Harvest into Livelihoods for Rural Women</h1>
+    <p class="sub">A CSR-funded solar dehydration initiative that gave rural women in Jammu &amp; Kashmir and Telangana a dignified, zero-energy-cost livelihood — while rescuing tonnes of fruit and vegetables that would otherwise have gone to waste.</p>
+    <div class="meta">
+      <span>Location: Qazigund, Anantnag, J&amp;K</span>
+      <span>Location: Dichpally, Nizamabad, Telangana</span>
+      <span>Timeline: Aug 2022 – May 2023</span>
+      <span>CSR Partner: NIIF / Athaang</span>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div>
+      <div class="num">2</div>
+      <div class="lbl">Project sites — J&amp;K &amp; Telangana</div>
+    </div>
+    <div>
+      <div class="num">~45+</div>
+      <div class="lbl">Rural women given direct livelihood (Year 1 target)</div>
+    </div>
+    <div>
+      <div class="num">34–58</div>
+      <div class="lbl">Tonnes of fruit, vegetables &amp; herbs solar-dried per year (combined Year-1 plan)</div>
+    </div>
+    <div>
+      <div class="num">₹0</div>
+      <div class="lbl">Energy cost — 100% solar-powered drying</div>
+    </div>
+  </div>
+</div>
+
+<!-- THE STORY -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Problem We Set Out to Solve</div>
+      <h2>35–40% of India's fruits and vegetables never reach a consumer</h2>
+    </div>
+    <p>Across rural India, large quantities of fruit, vegetables and herbs perish every season for want of basic preserving, processing and marketing infrastructure. Industry estimates suggest that <b>35–40% of all fruits and vegetables produced never reach the end consumer</b> — rotting in fields, in transit, or in unsold market stock. As this food waste decomposes, it releases methane, a greenhouse gas nearly 23 times more potent than CO₂. If food waste were a nation, it would rank as the third-largest emitter of greenhouse gases in the world, after China and the United States.</p>
+    <p>Project Ravi Kiran was Gramonnati Trust's answer to this problem — built around a simple, elegant technology: <b>solar dehydration</b>. On an average day, sunlight delivers roughly 1,367 watts of heat energy per square metre. By drawing warm, dry air across the surface of fruits and vegetables, a solar dryer removes 80–90% of their moisture at an ambient temperature of 55–65°C — with zero electricity, zero fuel, and zero emissions. The result: nutritious, shelf-stable dried produce, and a sustainable livelihood for the rural women who run the drying units.</p>
+    <p>The project integrated three goals into a single model: <b>rescuing perishable produce</b> from farmers and Farmer Producer Organisations (FPOs), <b>creating dignified livelihoods</b> for rural women (and, in time, ex-servicemen households), and <b>building environmentally sustainable</b> micro-enterprises that could be replicated across other regions.</p>
+  </div>
+</section>
+
+<!-- TWO LOCATIONS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Where We Worked</div>
+      <h2>Two Sites, One Model</h2>
+    </div>
+    <p>Backed by CSR funding from <b>NIIF</b> (National Investment &amp; Infrastructure Fund) through its CSR implementation partner <b>Athaang</b>, Gramonnati Trust signed its MoU on 3 August 2022 and set up solar drying facilities at two very different ends of the country — testing the model in the cold, high-altitude valleys of Kashmir and the warm agricultural belt of Telangana.</p>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h3>Qazigund, Jammu &amp; Kashmir</h3>
+        <div class="place">Village Mandipora, Tehsil Dooru, District Anantnag — 4 km from the Banihal Tunnel</div>
+        <ul>
+          <li><b>Funds sanctioned:</b> 13 September 2022</li>
+          <li><b>Site occupied:</b> 15 December 2022, after surveying 12–15 candidate sites</li>
+          <li><b>Soft launch:</b> 11 March 2023, with Athaang GM Mr Aftab Darvesh</li>
+          <li><b>Produce:</b> Kashmiri apples, plums, peaches, apricots, pears, walnuts, mushrooms, strawberries, seabuckthorn and cranberry — sourced through 10+ identified FPOs</li>
+          <li><b>Equipment plan:</b> 20 standard (40 kg) Raheja solar dryers + 4 advanced (75 kg) Sukoon Solutions dryers</li>
+        </ul>
+      </div>
+      <div class="loc-card">
+        <h3>Dichpally, Telangana</h3>
+        <div class="place">District Nizamabad, Telangana</div>
+        <ul>
+          <li><b>Funds sanctioned:</b> 7 December 2022</li>
+          <li><b>Site leased &amp; prepared:</b> December 2022 – February 2023 (a former roadside restaurant building, converted into a processing facility)</li>
+          <li><b>Soft launch:</b> 11 March 2023 (with a traditional pooja); <b>Formal launch:</b> 3 May 2023</li>
+          <li><b>Produce:</b> Mangoes, tomatoes, onions, ginger, garlic, guava, banana and local greens — plus Moringa, ginger and turmeric powders</li>
+          <li><b>Equipment plan:</b> 15 standard (40 kg) Raheja solar dryers + 2 advanced (200 kg) SEED dryers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>From Surplus Harvest to Shelf-Stable Product</h2>
+    </div>
+    <p>Every Project Ravi Kiran site ran the same end-to-end value chain — designed so that local women, once trained, could operate and maintain the equipment themselves with minimal outside support.</p>
+    <div class="flow">
+      <div class="step"><div class="n">01</div><h4>Sourcing</h4><p>Unsold or surplus fruits, vegetables and herbs purchased directly from local farmers and FPOs.</p></div>
+      <div class="step"><div class="n">02</div><h4>Pre-processing</h4><p>Washing, sorting, pulping and slicing — done by trained local women.</p></div>
+      <div class="step"><div class="n">03</div><h4>Solar Drying</h4><p>1–2 days in solar dryers at 55–65°C, removing 80–90% moisture, down to roughly 28% of original weight.</p></div>
+      <div class="step"><div class="n">04</div><h4>Post-processing</h4><p>Slicing, rolling and shaping into finished formats — including no-sugar fruit rolls and energy bars.</p></div>
+      <div class="step"><div class="n">05</div><h4>Packaging</h4><p>Nutrition testing, compliance certification, and creative packaging — under the Gratitude Farms brand.</p></div>
+      <div class="step"><div class="n">06</div><h4>Marketing &amp; Sales</h4><p>Local markets, Army units and establishments, corporate gifting, and bulk/online sales.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- J&K GALLERY -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Journey in Photos — Part 1</div>
+      <h2>Qazigund, Jammu &amp; Kashmir</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">Oct–Nov 2022</div><div class="tl-text">Visits to apple orchards and selection of potential supply vendors.</div></div>
+      <div class="tl-item"><div class="tl-date">Dec 2022</div><div class="tl-text">Site identified and occupied near the Banihal Tunnel; a Project Manager, Supervisor, Food Technology Manager and Admin Coordinator hired locally.</div></div>
+      <div class="tl-item"><div class="tl-date">Dec 2022 – Feb 2023</div><div class="tl-text">Solar dryers manufactured and pre-shipment inspected at Raheja Solar Food Products (Indore) and Sukoon Innovations; heavy Kashmir Valley snow slowed on-site work.</div></div>
+      <div class="tl-item"><div class="tl-date">Jan–Feb 2023</div><div class="tl-text">Gramonnati's local team trained in solar drying and food processing in Hyderabad.</div></div>
+      <div class="tl-item"><div class="tl-date">1–10 Mar 2023</div><div class="tl-text">Solar dryers installed on site; local women selected and trained.</div></div>
+      <div class="tl-item"><div class="tl-date">11 Mar 2023</div><div class="tl-text">Soft launch of the Qazigund facility, with Athaang GM Mr Aftab Darvesh in attendance.</div></div>
+    </div>
+
+    <div class="gallery" style="margin-top:32px;">
+      <figure>
+        <img src="images/jk_01_apple_sourcing.jpg" alt="Sorting and grading Kashmir apples">
+        <figcaption><b>Sourcing &amp; grading.</b> Apples sorted and priced at a local collection point, October 2022.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/jk_02_site_before.jpg" alt="The Qazigund site before construction">
+        <figcaption><b>Before.</b> The open ground identified for the Qazigund drying yard, prior to any work beginning.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/jk_03_training_hyderabad.jpg" alt="Food processing training session in Hyderabad">
+        <figcaption><b>Building skills.</b> Solar-drying and food-processing training for the project team, Hyderabad, Jan–Feb 2023.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/jk_04_beneficiary_selection.jpg" alt="Selecting women beneficiaries in Qazigund">
+        <figcaption><b>Selecting the team.</b> Local women being interviewed and selected for training ahead of launch.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/jk_05_soft_launch.jpg" alt="Soft launch ceremony at Qazigund with Athaang GM">
+        <figcaption><b>Soft launch, 11 March 2023.</b> Gramonnati's team briefs Athaang's GM, Mr Aftab Darvesh, on site — with the Kashmir Valley's snow-capped hills in the background.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- TELANGANA GALLERY -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Journey in Photos — Part 2</div>
+      <h2>Dichpally &amp; Nizamabad, Telangana</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">Oct–Dec 2022</div><div class="tl-text">Leadership site visits; a roadside building in Dichpally leased and identified for conversion into a processing facility.</div></div>
+      <div class="tl-item"><div class="tl-date">Dec 2022 – Feb 2023</div><div class="tl-text">Electrification, perimeter walls and interior finishing carried out; solar dryers manufactured and inspected at Raheja Solar Food Products, Indore, and SEED, Hyderabad.</div></div>
+      <div class="tl-item"><div class="tl-date">Early Mar 2023</div><div class="tl-text">Solar dryers despatched from Indore and installed on site; local women selected and trained in food processing.</div></div>
+      <div class="tl-item"><div class="tl-date">11 Mar 2023</div><div class="tl-text">Soft launch, marked with a traditional pooja at the facility.</div></div>
+      <div class="tl-item"><div class="tl-date">3 May 2023</div><div class="tl-text">Formal launch of Project Ravi Kiran, Dichpally.</div></div>
+    </div>
+
+    <div class="gallery" style="margin-top:32px;">
+      <figure>
+        <img src="images/tg_01_site_before.jpg" alt="The leased Dichpally site before conversion">
+        <figcaption><b>Before.</b> The roadside building in Dichpally, leased and earmarked for conversion into the processing facility.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/tg_02_dryers_indore.jpg" alt="Solar dryers loaded for transport at Indore">
+        <figcaption><b>Built &amp; inspected.</b> Solar dryer components loaded for transport after manufacturing and inspection, Indore.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/tg_03_dryers_despatched.jpg" alt="Solar dryers despatched from Indore">
+        <figcaption><b>On the way.</b> Solar dryers despatched from Indore to the Telangana site, March 2023.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/tg_04_soft_launch_pooja.jpg" alt="Soft launch pooja ceremony at Dichpally">
+        <figcaption><b>Soft launch, 11 March 2023.</b> A traditional pooja marks the start of operations at the Dichpally facility.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/tg_05_women_processing.jpg" alt="Women processing fresh tomatoes at the Dichpally facility">
+        <figcaption><b>At work.</b> Local women washing and slicing fresh tomatoes ahead of solar drying.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/tg_06_aerial_drying_yard.jpg" alt="Aerial view of the solar drying yard at Dichpally">
+        <figcaption><b>The drying yard, from above.</b> Rows of solar dryers in operation at the Dichpally facility.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Made</div>
+      <h2>Products of Project Ravi Kiran — Under the Gratitude Farms Brand</h2>
+    </div>
+    <p>Every finished product was sold under <b>Gratitude Farms</b>, Gramonnati's own brand for solar-dried produce — marketed proudly as <i>"An Ex-Soldiers' Enterprise."</i> Products were tested for nutrition and compliance before sale, and channelled through local markets, Army units and establishments, corporate gifting, and bulk/online sales.</p>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <img src="images/product_turmeric_powder.jpg" alt="Gratitude Farms Solar Dried Turmeric Powder">
+        <div>
+          <h4>Solar Dried Turmeric Powder</h4>
+          <p>100% natural, no artificial colour or preservatives, 5.5% curcumin content — dried entirely using solar energy.</p>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="images/product_ginger_powder.jpg" alt="Gratitude Farms Solar Dried Ginger Powder">
+        <div>
+          <h4>Solar Dried Ginger Powder</h4>
+          <p>100% natural, no artificial colour or preservatives — made from fresh ginger sourced through local FPOs.</p>
+        </div>
+      </div>
+    </div>
+
+    <table class="gt" style="margin-top:30px;">
+      <tr><th>Location</th><th>Products (Year 1 Plan)</th><th>Planned Output</th></tr>
+      <tr><td>Qazigund, J&amp;K</td><td>Fruit rolls — apple, plum, peach, apricot, pear, walnut (seasonal)</td><td>~34.4 tonnes</td></tr>
+      <tr><td>Dichpally, Telangana</td><td>Dehydrated mangoes, tomatoes, onions, ginger &amp; garlic, guava &amp; banana</td><td>24 tonnes (6t mango / 6t tomato / 6t onion / 3t ginger-garlic / 3t guava-banana)</td></tr>
+      <tr><td>Dichpally, Telangana</td><td>Moringa, ginger and turmeric powders</td><td>Work-in-progress product line</td></tr>
+    </table>
+    <p style="margin-top:10px;font-size:0.88rem;color:var(--grey);">Indicative pricing: raw produce sourced at roughly ₹10–15/kg; finished dried products sold at roughly ₹300–500/kg.</p>
+  </div>
+</section>
+
+<!-- IMPACT NUMBERS -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Impact &amp; Financial Model</div>
+      <h2>Built to be Self-Sustaining, Not Just Subsidised</h2>
+    </div>
+    <p>Project Ravi Kiran's Year-1 plan for Qazigund alone called for direct livelihoods to 45 rural women across 2–3 Self-Help Groups, each earning an average of ₹6,000 per month (₹32.4 lakhs in total payouts for the year) — funded by a one-time CSR capital investment, with the unit designed to become self-sustaining within its first year of operation.</p>
+    <table class="gt">
+      <tr><th>Metric (Qazigund, J&amp;K — 5-Year Plan)</th><th>Year 1</th><th>Year 5</th><th>5-Year Total</th></tr>
+      <tr><td>One-time CSR capex</td><td>₹97.05 lakhs</td><td>—</td><td>₹97.05 lakhs</td></tr>
+      <tr><td>Production (kg/year)</td><td>34,474 kg</td><td>38,778 kg</td><td>185,169 kg</td></tr>
+      <tr><td>Payout to 45 women (₹/year)</td><td>₹32.4 lakhs</td><td>₹36.4 lakhs</td><td>₹174.0 lakhs</td></tr>
+      <tr><td>Estimated annual surplus</td><td>₹7.7 lakhs</td><td>₹22.0 lakhs</td><td>₹75.1 lakhs</td></tr>
+      <tr><td>Cumulative surplus (reinvested at 5% FD for expansion)</td><td>₹7.7 lakhs</td><td>₹190.8 lakhs</td><td>—</td></tr>
+    </table>
+    <p class="note">Figures above are drawn from Gramonnati Trust's original Year-1 project plan and five-year financial projections for the Qazigund site (December 2022), shared with the NIIF CSR team. They represent planning estimates, not audited actuals — and should be refreshed with verified production and payout data before being treated as a public impact claim.</p>
+  </div>
+</section>
+
+<!-- PARTNERS & TEAM -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Built in Partnership</div>
+      <h2>Our Partners &amp; On-Ground Team</h2>
+    </div>
+    <p>Project Ravi Kiran was made possible by CSR funding from <b>NIIF</b> through <b>Athaang</b>, and delivered with technology, sourcing and training support from a network of specialist partners.</p>
+    <div class="partner-row">
+      <span class="chip">NIIF — CSR Funding Partner</span>
+      <span class="chip">Athaang — CSR Implementation Partner</span>
+      <span class="chip">ISAP — Farmer/FPO Partnerships (Kashmir Valley)</span>
+      <span class="chip">SEED, Hyderabad — Solar-Dried Food R&amp;D</span>
+      <span class="chip">Raheja Solar Food Products, Indore — Solar Dryer Manufacturer</span>
+      <span class="chip">Sukoon Solutions — Advanced Solar Dryer Manufacturer</span>
+      <span class="chip">Gratitude Farms — Marketing &amp; Retail Brand</span>
+    </div>
+    <p style="margin-top:18px;font-size:0.9rem;">With special thanks to Mr Ashok Emani, Mr Pranay Krishan, and Mr BJV Prasad Rao and team at NIIF/Athaang for their constant support and guidance.</p>
+
+    <div class="team-grid">
+      <div>
+        <h4>On-Ground Team — Qazigund, J&amp;K</h4>
+        <ul>
+          <li>Saurabh Tiwari — Project Manager</li>
+          <li>Hon. Capt Ab Majid Hajam — Project Supervisor</li>
+          <li>Abdul Rauf — Food Technology Manager</li>
+          <li>Aqil Ahmad — Project Admin &amp; Coordination</li>
+        </ul>
+      </div>
+      <div>
+        <h4>On-Ground Team — Dichpally, Telangana</h4>
+        <ul>
+          <li>Lt Col Santosh Reddy — Program Head</li>
+          <li>Shankar Chelluri — Marketing &amp; Sales</li>
+          <li>Rajeswari — Food Technology Expert</li>
+          <li>Mahesh — Project Manager</li>
+          <li>Hav Srinivas — Project Supervisor</li>
+          <li>Praveen — Project Coordinator</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="wrap">
+    <h2>Sunlight, Surplus Harvest, and Dignified Livelihoods</h2>
+    <p>Project Ravi Kiran proved that a simple, zero-energy-cost technology — paired with rural women's skill and effort — can turn wasted produce into income, nutrition and dignity. It's a model Gramonnati Trust continues to draw on as it builds its next generation of community-led infrastructure.</p>
+    <div class="btns">
+      <a class="btn primary" href="#">See Our Other Projects</a>
+      <a class="btn outline" href="#">Partner With Us</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    Gramonnati Trust · Reg. under the Indian Trusts Act · 12AA &amp; 80G Certified · CSR-1 Registered (CSR00017701)<br>
+    <a href="mailto:info@gramonnati.org">info@gramonnati.org</a> · <a href="http://www.gramonnati.org">www.gramonnati.org</a> · +91 80959 99776
+  </div>
+</footer>
+
+</body>
+</html>
