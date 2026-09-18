@@ -19,7 +19,7 @@ import {
   SectionHeading,
   SolidLink,
 } from "@/components/site/page-shell";
-import heroImage from "@/assets/gt/hero_tray_loading_dichpally.jpg";
+import heroCollage from "@/assets/gt/hero_collage.webp";
 import { programmes } from "@/content/programmes";
 import { credentials, org, partners, positioning } from "@/content/site";
 
@@ -97,15 +97,21 @@ function HomePage() {
       {/* Hero ---------------------------------------------------------- */}
       <section className="relative isolate overflow-hidden bg-brand-strong text-primary-foreground">
         <img
-          src={heroImage}
-          alt="Women at the Dichpally facility loading trays of sliced produce into solar dryers"
-          className="absolute inset-0 size-full object-cover object-center opacity-70"
-          width={1600}
-          height={1200}
+          src={heroCollage}
+          alt="A collage of Gramonnati field work — solar dryers, women processing produce, training sessions and sorting lines"
+          className="hero-image absolute inset-0 size-full object-cover object-center opacity-55"
+          width={1610}
+          height={934}
+          loading="eager"
+          fetchPriority="high"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-tr from-brand-strong via-brand-strong/90 to-brand-strong/35"
+          className="absolute inset-0 bg-gradient-to-r from-brand-strong via-brand-strong/85 to-brand-strong/30"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-brand-strong/40 via-transparent to-brand-strong"
         />
 
         <div className="relative mx-auto max-w-7xl px-5 pb-14 pt-16 sm:px-8 sm:pb-20 sm:pt-24 lg:px-10 lg:pb-24 lg:pt-28">
